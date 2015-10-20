@@ -93,23 +93,32 @@ a3.innerHTML = a3Text;
 question.appendChild(a3);
 question.appendChild(document.createElement('br'));
 
-var inputButton = document.createElement('input');
-setAttribute(inputButton, {'type':'submit', 'value':'submit'});
+var inputButton = document.createElement('button');
+setAttribute(inputButton, {'type':'click', 'value':'submit'});
+inputButton.textContent='Submit';
 question.appendChild(inputButton);
 
-var valueScore = function () {
+var valueScore = function (event) {
+	event.preventDefault();
 	for (var i = 0; i < animalObjects.length; i++) {
-		if (document.getElementById('q1A1').checked == true && animalObjects[i].q1A1Attr.attr == true) {
-			animalObjects[i].score =+ 1
+		if (document.getElementById('q1A1').checked == true && animalObjects[i][q1A1Attr.attr] == true) {
+			animalObjects[i].score += 1;
+		} else if (document.getElementById('q1A2').checked == true && animalObjects[i][q1A2Attr.attr] == true) {
+			animalObjects[i].score += 1;
+		} else if (document.getElementById('q1A3').checked == true && animalObjects[i][q1A3Attr.attr] == true) {
+			animalObjects[i].score += 1;
 		}
-	};
 
+		}
+	console.log('A1 - ' + document.getElementById('q1A1').checked);
+	console.log('A2 - ' + document.getElementById('q1A2').checked);
+	console.log('A3 - ' + document.getElementById('q1A3').checked);
 };
 
 
 
 
-inputButton.onClick = valueScore();
+inputButton.addEventListener('click', valueScore);
 
 
 
