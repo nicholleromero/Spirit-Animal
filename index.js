@@ -4,7 +4,9 @@ var username = "";
 var initialClick = function() {
 	var userInput = function() {
 		username = document.getElementById('username').value;
-		document.getElementById('username').value = "";
+		/*document.getElementById('username').value = "";*/
+//Adding Local Storage of Username.
+localStorage.setItem('username', username);
 		}
 //Function Change the Name Label to a "String" Message preparing the user for the test. 
 	var loadQuestions = function() {
