@@ -29,7 +29,7 @@ var startGame = function () {
 }
 //Runs our event listener.
 var submitButton = document.getElementById('submitButton');
-submitButton.addEventListener('click', initialClick);
+submitButton.addEventListener(('click' || keyCode == 13), initialClick);
 
 
 
