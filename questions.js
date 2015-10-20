@@ -143,74 +143,16 @@ var valueScore = function (event) {
 	var element = document.getElementById('question');
 	element.parentNode.removeChild(element);
 	questionNumber += 1;
-	// console.log('Question number: ' + questionNumber);
-	// console.log('A1 - ' + document.getElementById('A1').checked);
-	// console.log('A2 - ' + document.getElementById('A2').checked);
-	// console.log('A3 - ' + document.getElementById('A3').checked);
 	if (questionNumber < questions.length) {
 		questionBuilder();
 	} else {
+		localStorage.setItem('animals', JSON.stringify(animalObjects));
 		window.location.href = "output.html";
 	}
 
 };
 
 questionBuilder();
-
-
-
-
-
-
-
-
-
-
-
-
-	// for (var i = 0; i < animalObjects.length; i+=1) {
-	// 	if (Answer.value == 'strong' && animalObjects[i].strong == true) {
-	// 		animalObjects[i].score += 1;
-	// 	} else if (Answer.value == 'wise' && animalObjects[i].wise == true) {
-	// 		animalObjects[i].score += 1;
-	// 	} else if (Answer.value == 'resourceful' && animalObjects[i].resourceful == true) {
-	// 		animalObjects[i].score += 1;
-	// 	} else if (Answer.value == 'cunning' && animalObjects[i].cunning == true) {
-	// 		animalObjects[i].score += 1;
-	// 	} else if (Answer.value == 'noble' && animalObjects[i].noble == true) {
-	// 		animalObjects[i].score += 1;
-	// 	} else if (Answer.value == 'loyal' && animalObjects[i].loyal == true) {
-	// 		animalObjects[i].score += 1;
-	// 	} else if (Answer.value == 'loner' && animalObjects[i].loner == true) {
-	// 		animalObjects[i].score += 1;
-	// 	} else if (Answer.value == 'smallgroup' && animalObjects[i].smallgroup == true) {
-	// 		animalObjects[i].score += 1;
-	// 	} else if (Answer.value == 'largegroup' && animalObjects[i].largegroup == true) {
-	// 		animalObjects[i].score += 1;
-	// 	} else if (Answer.value == 'water' && animalObjects[i].wate == true) {
-	// 		animalObjects[i].score += 1;
-	// 	} else if (Answer.value == 'land' && animalObjects[i].land == true) {
-	// 		animalObjects[i].score += 1;
-	// 	} else if (Answer.value == 'arctic' && animalObjects[i].arctic == true) {
-	// 		animalObjects[i].score += 1;
-	// 	} else if (Answer.value == 'forest' && animalObjects[i].forest == true) {
-	// 		animalObjects[i].score += 1;
-	// 	} else if (Answer.value == 'river' && animalObjects[i].river == true) {
-	// 		animalObjects[i].score += 1;
-	// 	} else if (Answer.value == 'mountain' && animalObjects[i].mountain == true) {
-	// 		animalObjects[i].score += 1;
-	// 	}
-	// };
-// setAttributes(a1, {"src": "http://example.com/something.jpeg", "height": "100%", ...});
-
-// var question1 = document.createElement('p');
-//   photo1.setAttribute('src', picArr[randomIndex1]);
-//   pic1.appendChild(photo1);
-
-
-// var question1 = document.getElementById('pic1');
-//   pic1Button.addEventListener('click', function() 
-
 
 
 
