@@ -31,12 +31,22 @@ var animalData = [
 
 var animalObjects = [];
 
-var q1Text = 'Here is question 1?';
-var q2Text = 'Here is question 2?';
-var q3Text = 'Here is question 3?';
-var a1Text = '<label for="q1A1">Here is answer 1 +1 strong</label>';
-var a2Text = '<label for="q1A2">Here is answer 2 +1 resourceful</label>';
-var a3Text = '<label for="q1A3">Here is answer 3 +1 wise</label>';
+var questionNumber = 0;
+
+var questions = ['Here is question 1?', 'Here is question 2?', 'Here is question 3?', 'Here is question 4?'];
+
+var a1Text = ['<label for="A1">Here is Q1 answer 1 +1 strong</label>', 
+				'<label for="A1">Here is Q2 answer 1 +1 strong</label>', 
+				'<label for="A1">Here is Q3 answer 1 +1 strong</label>',
+				'<label for="A1">Here is Q4 answer 1 +1 strong</label>'];
+var a2Text = ['<label for="A2">Here is Q1 answer 2 +1 resourceful</label>',
+				'<label for="A2">Here is Q2 answer 2 +1 resourceful</label>',
+				'<label for="A2">Here is Q3 answer 2 +1 resourceful</label>',
+				'<label for="A2">Here is Q4 answer 2 +1 resourceful</label>'];
+var a3Text = ['<label for="A3">Here is Q1 answer 3 +1 wise</label>',
+				'<label for="A3">Here is Q2 answer 3 +1 wise</label>',
+				'<label for="A3">Here is Q3 answer 3 +1 wise</label>',
+				'<label for="A3">Here is Q4 answer 3 +1 wise</label>'];
 
 var Answer = function (id, type, name, attr) {
 	this.id = id;
@@ -45,9 +55,23 @@ var Answer = function (id, type, name, attr) {
 	this.attr = attr
 }
 
-var q1A1Attr = new Answer ('q1A1', 'radio', 'vacation', 'strong');
-var q1A2Attr = new Answer ('q1A2', 'radio', 'vacation', 'resourceful');
-var q1A3Attr = new Answer ('q1A3', 'radio', 'vacation', 'wise');
+var a1Attr = [
+	new Answer ('A1', 'radio', 'vacation', 'strong'),
+	new Answer ('A1', 'radio', 'vacation', 'strong'),
+	new Answer ('A1', 'radio', 'vacation', 'strong'),
+	new Answer ('A1', 'radio', 'vacation', 'strong')]
+
+var a2Attr = [
+	new Answer ('A2', 'radio', 'vacation', 'resourceful'),
+	new Answer ('A2', 'radio', 'vacation', 'resourceful'),
+	new Answer ('A2', 'radio', 'vacation', 'resourceful'),
+	new Answer ('A2', 'radio', 'vacation', 'resourceful')]
+
+var a3Attr = [
+	new Answer ('A3', 'radio', 'vacation', 'wise'),
+	new Answer ('A3', 'radio', 'vacation', 'wise'),
+	new Answer ('A3', 'radio', 'vacation', 'wise'),
+	new Answer ('A3', 'radio', 'vacation', 'wise')]
 
 for(var i=0; i<animalData.length; i+=1){
 	var newAnimal = new Animal(animalData[i][0], animalData[i][1], animalData[i][2], animalData[i][3], 
@@ -64,61 +88,77 @@ function setAttribute(el, attrs) {
   }
 }
 
-var question = document.getElementById('question');
-q1TextEl = document.createElement('p');
-q1TextEl.innerHTML = q1Text;
-question.appendChild(q1TextEl);
+var questionBuilder = function () {
+	var form = document.getElementById('form');
+	var question = document.createElement('div');
+	setAttribute(question, {'id':'question'});
+	form.appendChild(question);
+	qTextEl = document.createElement('p');
+	qTextEl.innerHTML = questions[questionNumber];
+	question.appendChild(qTextEl);
 
-var a1Input = document.createElement('input');
-setAttribute(a1Input, q1A1Attr);
-question.appendChild(a1Input)
-var a1 = document.createElement('label');
-a1.innerHTML = a1Text;
-question.appendChild(a1);
-question.appendChild(document.createElement('br'));
+	var a1Input = document.createElement('input');
+	setAttribute(a1Input, a1Attr[questionNumber]);
+	question.appendChild(a1Input)
+	var a1 = document.createElement('label');
+	a1.innerHTML = a1Text[questionNumber];
+	question.appendChild(a1);
+	question.appendChild(document.createElement('br'));
 
-var a2Input = document.createElement('input');
-setAttribute(a2Input, q1A2Attr);
-question.appendChild(a2Input)
-var a2 = document.createElement('label');
-a2.innerHTML = a2Text;
-question.appendChild(a2);
-question.appendChild(document.createElement('br'));
+	var a2Input = document.createElement('input');
+	setAttribute(a2Input, a2Attr[questionNumber]);
+	question.appendChild(a2Input)
+	var a2 = document.createElement('label');
+	a2.innerHTML = a2Text[questionNumber];
+	question.appendChild(a2);
+	question.appendChild(document.createElement('br'));
 
-var a3Input = document.createElement('input');
-setAttribute(a3Input, q1A3Attr);
-question.appendChild(a3Input)
-var a3 = document.createElement('label');
-a3.innerHTML = a3Text;
-question.appendChild(a3);
-question.appendChild(document.createElement('br'));
+	var a3Input = document.createElement('input');
+	setAttribute(a3Input, a3Attr[questionNumber]);
+	question.appendChild(a3Input)
+	var a3 = document.createElement('label');
+	a3.innerHTML = a3Text[questionNumber];
+	question.appendChild(a3);
+	question.appendChild(document.createElement('br'));
 
-var inputButton = document.createElement('button');
-setAttribute(inputButton, {'type':'click', 'value':'submit'});
-inputButton.textContent='Submit';
-question.appendChild(inputButton);
+	var inputButton = document.createElement('button');
+	setAttribute(inputButton, {'type':'click', 'value':'submit', 'id':'inputButton'});
+	inputButton.textContent='Submit';
+	question.appendChild(inputButton);
+	inputButton.addEventListener('click', valueScore);
+};
+
 
 var valueScore = function (event) {
 	event.preventDefault();
 	for (var i = 0; i < animalObjects.length; i++) {
-		if (document.getElementById('q1A1').checked == true && animalObjects[i][q1A1Attr.attr] == true) {
+		if (document.getElementById('A1').checked == true && animalObjects[i][a1Attr[questionNumber].attr] == true) {
 			animalObjects[i].score += 1;
-		} else if (document.getElementById('q1A2').checked == true && animalObjects[i][q1A2Attr.attr] == true) {
+		} else if (document.getElementById('A2').checked == true && animalObjects[i][a2Attr[questionNumber].attr] == true) {
 			animalObjects[i].score += 1;
-		} else if (document.getElementById('q1A3').checked == true && animalObjects[i][q1A3Attr.attr] == true) {
+		} else if (document.getElementById('A3').checked == true && animalObjects[i][a3Attr[questionNumber].attr] == true) {
 			animalObjects[i].score += 1;
 		}
+		}
+	var element = document.getElementById('question');
+	element.parentNode.removeChild(element);
+	questionNumber += 1;
+	// console.log('Question number: ' + questionNumber);
+	// console.log('A1 - ' + document.getElementById('A1').checked);
+	// console.log('A2 - ' + document.getElementById('A2').checked);
+	// console.log('A3 - ' + document.getElementById('A3').checked);
+	if (questionNumber < questions.length) {
+		questionBuilder();
+	} else {
+		window.location.href = "output.html";
+	}
 
-		}
-	console.log('A1 - ' + document.getElementById('q1A1').checked);
-	console.log('A2 - ' + document.getElementById('q1A2').checked);
-	console.log('A3 - ' + document.getElementById('q1A3').checked);
 };
 
+questionBuilder();
 
 
 
-inputButton.addEventListener('click', valueScore);
 
 
 
