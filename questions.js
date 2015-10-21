@@ -31,11 +31,13 @@ var animalData = [ //All animal data is expandable, add new lines to the 2 dimen
 
 var animalObjects = []; //Holds all animal information for scoring
 
-for(var i=0; i<animalData.length; i+=1){ //Pushes all animal information with a 2 dimensional array loop
-	for (var j=0; j<animalData[i].length; j +=1) {
-	var newAnimal = new Animal(animalData[i][j]);
+
+for(var i=0; i<animalData.length; i+=1){ //Pushes all animal data
+	var newAnimal = new Animal(animalData[i][0], animalData[i][1], animalData[i][2], animalData[i][3], 
+		animalData[i][4], animalData[i][5], animalData[i][6], animalData[i][7], animalData[i][8], 
+		animalData[i][9], animalData[i][10], animalData[i][11], animalData[i][12], animalData[i][13],
+		animalData[i][14], animalData[i][15], animalData[i][16]);
 	animalObjects.push(newAnimal);
-	};
 };
 
 var questionNumber = 0; //Control variable for ENTIRE SCRIPT!!!!
