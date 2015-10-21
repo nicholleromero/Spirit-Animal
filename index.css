@@ -1,0 +1,24 @@
+header {
+	background-color: red;
+}
+footer {
+	background-color: pink;
+/*	clear: both;
+	position: relative;
+	z-index: 10;
+	height: 3em;
+	margin: -3em;
+	text-align: center;*/
+}
+#index-p {
+	background-color: purple;
+}
+button {
+	background-color: orange;
+}
+#index-form {
+	background-color: blue;
+}
+body {
+	background-color: grey;
+}
