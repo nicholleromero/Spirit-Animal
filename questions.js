@@ -1,7 +1,8 @@
-var Animal = function (animalName, animalImage, strong, wise, resourceful, cunning, noble, loyal, loner, smallgroup, 
+var Animal = function (animalName, animalImage, animalSong, strong, wise, resourceful, cunning, noble, loyal, loner, smallgroup,
 	largegroup, water, land, arctic, forest, river, mountain) {
 	this.animalName = animalName;
 	this.animalImage = animalImage;
+	this.animalSong = animalSong;
 	this.strong = strong;
 	this.wise = wise;
 	this.resourceful = resourceful;
@@ -21,12 +22,12 @@ var Animal = function (animalName, animalImage, strong, wise, resourceful, cunni
 };
 
 var animalData = [
-	['wolf', 'img/wolf.jpg', true, false, true, true, false, false, false, true, false, false, true, false, true, false, false],
-	['eagle', 'img/eagle.jpg', true, true, true, false, false, false, true, false, false, false, true, false, false, false, false],
-	['penguin', 'img/penguin,jpg', false, false, true, false, true, true, false, false, true, true, false, true, false, false, false],
-	['bear', 'img/bear.jpg', true, true, false, true, false, false, true, false, false, false, true, false, true, false, false],
-	['squirrel', 'img/squirrel.jpg', false, true, true, true, false, false, false, true, false, false, true, false, true, false, false],
-	['salmon', 'img/salmon.jpg', true, false, true, false, true, false, false, false, true, true, false, false, false, true, false]
+	['wolf', 'img/wolf.jpg','music/wolf.mp3', true, false, true, true, false, false, false, true, false, false, true, false, true, false, false],
+	['eagle', 'img/eagle.jpg', 'music/eagle.mp3', true, true, true, false, false, false, true, false, false, false, true, false, false, false, false],
+	['penguin', 'img/penguin,jpg', 'music/penguin.mp3', false, false, true, false, true, true, false, false, true, true, false, true, false, false, false],
+	['bear', 'img/bear.jpg', 'music/bear.mp3', true, true, false, true, false, false, true, false, false, false, true, false, true, false, false],
+	['squirrel', 'img/squirrel.jpg', 'orca/wolf.mp3', false, true, true, true, false, false, false, true, false, false, true, false, true, false, false],
+	['salmon', 'img/salmon.jpg','music/slamon.mp3', true, false, true, false, true, false, false, false, true, true, false, false, false, true, false]
 ];
 
 var animalObjects = [];
@@ -35,8 +36,8 @@ var questionNumber = 0;
 
 var questions = ['Here is question 1?', 'Here is question 2?', 'Here is question 3?', 'Here is question 4?'];
 
-var a1Text = ['<label for="A1">Here is Q1 answer 1 +1 strong</label>', 
-				'<label for="A1">Here is Q2 answer 1 +1 strong</label>', 
+var a1Text = ['<label for="A1">Here is Q1 answer 1 +1 strong</label>',
+				'<label for="A1">Here is Q2 answer 1 +1 strong</label>',
 				'<label for="A1">Here is Q3 answer 1 +1 strong</label>',
 				'<label for="A1">Here is Q4 answer 1 +1 strong</label>'];
 var a2Text = ['<label for="A2">Here is Q1 answer 2 +1 resourceful</label>',
@@ -74,8 +75,8 @@ var a3Attr = [
 	new Answer ('A3', 'radio', 'vacation', 'wise')]
 
 for(var i=0; i<animalData.length; i+=1){
-	var newAnimal = new Animal(animalData[i][0], animalData[i][1], animalData[i][2], animalData[i][3], 
-		animalData[i][4], animalData[i][5], animalData[i][6], animalData[i][7], animalData[i][8], 
+	var newAnimal = new Animal(animalData[i][0], animalData[i][1], animalData[i][2], animalData[i][3],
+		animalData[i][4], animalData[i][5], animalData[i][6], animalData[i][7], animalData[i][8],
 		animalData[i][9], animalData[i][10], animalData[i][11], animalData[i][12], animalData[i][13],
 		animalData[i][14], animalData[i][15], animalData[i][16]);
 	animalObjects.push(newAnimal);
