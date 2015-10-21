@@ -1,4 +1,3 @@
-
 var animalObjects = JSON.parse(localStorage.getItem('animals'));
 
 var winningAnimal = 0;
@@ -37,7 +36,6 @@ var song = winningAnimal.animalSong
 var output = function() {
 	var hOne = document.getElementById('textMsg');
 	var article = document.getElementById('animal-content');
-
 	var msgOne = "Congratulations, " + localStorage.getItem('username') + '<br />' + '<img src= ' + 
 						winningAnimal.animalImage + ' />' + '<br />' + "We've Found Your Spirit Animal " 
 						+ " The " + '<q>' + winningAnimal.animalName.toUpperCase() + '</q>';
@@ -46,7 +44,7 @@ var output = function() {
 	article.innerHTML = msgTwo;
   var audio = document.getElementById('audio');
   var source = document.getElementById('mp3Source');
-  source.src=song
+  source.src=song;
 
   audio.load();
   audio.play();
