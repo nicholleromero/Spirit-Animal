@@ -20,7 +20,7 @@ var Animal = function (animalName, animalImage, strong, wise, resourceful, cunni
 	this.score = 0  //Score tracker
 };
 
-var animalData = [ //All animal data is expandable, if additional booleans are added add to line 38
+var animalData = [ //All animal data is expandable, add new lines to the 2 dimensional array -pushed at line 34
 	['wolf', 'img/wolf.jpg', true, false, true, true, false, false, false, true, false, false, true, false, true, false, false],
 	['eagle', 'img/eagle.jpg', true, true, true, false, false, false, true, false, false, false, true, false, false, false, false],
 	['penguin', 'img/penguin,jpg', false, false, true, false, true, true, false, false, true, true, false, true, false, false, false],
@@ -29,21 +29,19 @@ var animalData = [ //All animal data is expandable, if additional booleans are a
 	['salmon', 'img/salmon.jpg', true, false, true, false, true, false, false, false, true, true, false, false, false, true, false]
 ];
 
-var animalObjects = []; //Holds all animal information
+var animalObjects = []; //Holds all animal information for scoring
 
-for(var i=0; i<animalData.length; i+=1){ //Pushes all animal information
-	var newAnimal = new Animal(animalData[i][0], animalData[i][1], animalData[i][2], animalData[i][3], 
-		animalData[i][4], animalData[i][5], animalData[i][6], animalData[i][7], animalData[i][8], 
-		animalData[i][9], animalData[i][10], animalData[i][11], animalData[i][12], animalData[i][13],
-		animalData[i][14], animalData[i][15], animalData[i][16]);
+for(var i=0; i<animalData.length; i+=1){ //Pushes all animal information with a 2 dimensional array loop
+	for (var j=0; j<animalData[i].length; j +=1) {
+	var newAnimal = new Animal(animalData[i][j]);
 	animalObjects.push(newAnimal);
+	};
 };
-
 
 var questionNumber = 0; //Control variable for ENTIRE SCRIPT!!!!
 
 var questions = ['Here is question 1?', 'Here is question 2?', 'Here is question 3?', 'Here is question 4?'];
-//Questions are expandable -- Add questions and answers here and no additional changes are necessary
+//Questions are expandable -- Add questions/answers/attributes -- no additional changes are necessary
 var a1Text = ['<label for="A1">Here is Q1 answer 1 +1 strong</label>', 
 				'<label for="A1">Here is Q2 answer 1 +1 strong</label>', 
 				'<label for="A1">Here is Q3 answer 1 +1 strong</label>',
@@ -63,24 +61,25 @@ var Answer = function (id, type, name, attr) { //Adds attributes to answer eleme
 	this.name = name;
 	this.attr = attr
 }
-
-var a1Attr = [
+//ATTRIBUTES_________________________________________________________________
+var a1Attr = [ //Answer 1 attributes
 	new Answer ('A1', 'radio', 'vacation', 'strong'), //Q1
 	new Answer ('A1', 'radio', 'vacation', 'strong'), //Q2
 	new Answer ('A1', 'radio', 'vacation', 'strong'), //Q3
 	new Answer ('A1', 'radio', 'vacation', 'strong')] //Q4
 
-var a2Attr = [
+var a2Attr = [ //Answer 2 attributes
 	new Answer ('A2', 'radio', 'vacation', 'resourceful'), //Q1
 	new Answer ('A2', 'radio', 'vacation', 'resourceful'), //Q2
 	new Answer ('A2', 'radio', 'vacation', 'resourceful'), //Q3
 	new Answer ('A2', 'radio', 'vacation', 'resourceful')] //Q4
 
-var a3Attr = [
+var a3Attr = [ //Answer 3 attributes
 	new Answer ('A3', 'radio', 'vacation', 'wise'), //Q1
 	new Answer ('A3', 'radio', 'vacation', 'wise'), //Q2
 	new Answer ('A3', 'radio', 'vacation', 'wise'), //Q3
 	new Answer ('A3', 'radio', 'vacation', 'wise')] //Q4
+//___________________________________________________________________________
 
 function setAttribute(el, attrs) { //Function to push attributes into HTML elements
   for(var key in attrs) {
@@ -131,7 +130,7 @@ var questionBuilder = function () { //builds HTML framework for question block
 
 var valueScore = function (event) {  //Scores answers and loads next question or results page
 	event.preventDefault();
-	for (var i = 0; i < animalObjects.length; i++) {
+	for (var i = 0; i < animalObjects.length; i++) {  //2D loop controlled by questionNumber and animalObjects.length
 		if (document.getElementById('A1').checked == true && animalObjects[i][a1Attr[questionNumber].attr] == true) {
 			animalObjects[i].score += 1;   //Score for answer 1
 		} else if (document.getElementById('A2').checked == true && animalObjects[i][a2Attr[questionNumber].attr] == true) {
