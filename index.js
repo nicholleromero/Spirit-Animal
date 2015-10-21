@@ -1,10 +1,10 @@
 //variable to store our username.
 var username = "";
 //Function that allows the username to be stored.
-var initialClick = function() {
+var initialClick = function(e) {
+	e.preventDefault();
 	var userInput = function() {
 		username = document.getElementById('username').value;
-		/*document.getElementById('username').value = "";*/
 //Adding Local Storage of Username.
 localStorage.setItem('username', username);
 		}
@@ -14,22 +14,23 @@ localStorage.setItem('username', username);
 	  var msg = "Hello, " + username + "!" + '<br />' + " Are You Ready To Find Your Your Spirit Animal?";
 	  label.innerHTML = msg;
 	  var submitButton = document.getElementById('submitButton');
-	  submitButton.value = "IM READY!";
+	  submitButton.textContent = "IM READY!";
 	}
 //Calling our functions inside out initialClick function.
 	userInput();
 	loadQuestions();
 //Removes the submit button function once its clicked, the reinstalls it's functionalty. 
 	submitButton.removeEventListener('click', initialClick, false);
-	submitButton.addEventListener('click', startGame);
+	submitButton.addEventListener(('click' || keyCode == 13), startGame);
 }
 //Function to take our user to the next page/to the Spirit Animal Test 
-var startGame = function () {
+var startGame = function (e) {
+	e.preventDefault();
   window.location.href = "questions.html";
 }
 //Runs our event listener.
 var submitButton = document.getElementById('submitButton');
-submitButton.addEventListener('click', initialClick);
+submitButton.addEventListener(('click' || keyCode == 13), initialClick);
 
 
 
