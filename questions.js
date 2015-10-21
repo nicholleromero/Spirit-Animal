@@ -1,7 +1,8 @@
-var Animal = function (animalName, animalImage, strong, wise, resourceful, cunning, noble, loyal, loner, smallgroup, 
+var Animal = function (animalName, animalImage, animalSong, strong, wise, resourceful, cunning, noble, loyal, loner, smallgroup, 
 	largegroup, water, land, air, arctic, forest, river, animalInfo) {
 	this.animalName = animalName; //Animal name, direct output to results page
 	this.animalImage = animalImage; //Animal image location, direct output to results page
+	this.animalSong = animalSong;
 	this.strong = strong;
 	this.wise = wise;
 	this.resourceful = resourceful;
@@ -22,28 +23,27 @@ var Animal = function (animalName, animalImage, strong, wise, resourceful, cunni
 };
 
 var animalData = [ //All animal data is expandable, add new lines to the 2 dimensional array -pushed at line 34
-	['wolf', 'img/wolf.jpg', true, false, true, true, false, false, false, true, false, false, false, true, false, true, false, 
+	['wolf', 'img/wolf.jpg','music/wolf.mp3', true, false, true, true, false, false, false, true, false, false, false, true, false, true, false, 
 	 'Just like the Wolf, you are intuitive, strong, cunning and resourceful. You crave freedom and independence. You have very strong relationships with just a few and are fiercely loyal to them.'],
-	['eagle', 'img/eagle.jpg', true, true, true, false, false, false, true, false, false, false, false, true, true, false, false,
+	['eagle', 'img/eagle.jpg', 'music/eagle.mp3', true, true, true, false, false, false, true, false, false, false, false, true, true, false, false,
 	 'Just like the Eagle. you are strong, wise and resourceful. You have great balance and decision-making skills. You have strong primary relationships and are able to maintain them in times of physical distance, which is good because you like to walk this life alone.'],
-	['penguin', 'img/penguin,jpg', false, false, true, false, true, true, false, false, true, true, false, false, true, false, false,
+	['penguin', 'img/penguin.jpg', 'music/penguin.mp3', false, false, true, false, true, true, false, false, true, true, false, false, true, false, false,
 	 'Just like the Penguin, you are resourceful, loyal and noble. You are a social creature by nature and enjoy people and playtime. You believe in harmony and are committed to teamwork.'],
-	['bear', 'img/bear.jpg', true, true, false, true, false, false, true, false, false, false, false, true, false, true, false,
+	['bear', 'img/bear.jpg', 'music/bear.mp3', true, true, false, true, false, false, true, false, false, false, false, true, false, true, false,
 	 'Just like the Bear, you are strong, wise and cunning. You are not afraid to exhibit strength when you need to protect your loved ones or property. You are a confident person and enjoy your alone time. This helps facilitate your natural curiosity of life.'],
-	['squirrel', 'img/squirrel.jpg', false, true, true, true, false, false, false, true, false, false, false, true, false, true, false,
+	['squirrel', 'img/squirrel.jpg', 'music/squirrel.mp3', false, true, true, true, false, false, false, true, false, false, false, true, false, true, false,
 	 'Just like the Squirrel, you are wise, resourceful  and cunning. You have a tenacious way of attacking any problems. You are playful, assertive and family-oriented. You enjoy small groups with lots of activity.'],
-	['salmon', 'img/salmon.jpg', true, false, true, false, true, false, false, false, true, true, false, false, false, false, true,
+	['salmon', 'img/salmon.jpg', 'music/salmon.mp3', true, false, true, false, true, false, false, false, true, true, false, false, false, false, true,
 	 'Just like the Salmon, you are strong, resourceful and noble. You are tireless in your pursuit of what you want and great at overcoming obstacles. You enjoy large groups and crowds and feed off the energy and knowledge of others.']
 ];
 
 var animalObjects = []; //Holds all animal information for scoring
 
-
 for(var i=0; i<animalData.length; i+=1){ //Pushes all animal data
 	var newAnimal = new Animal(animalData[i][0], animalData[i][1], animalData[i][2], animalData[i][3], 
 		animalData[i][4], animalData[i][5], animalData[i][6], animalData[i][7], animalData[i][8], 
 		animalData[i][9], animalData[i][10], animalData[i][11], animalData[i][12], animalData[i][13],
-		animalData[i][14], animalData[i][15], animalData[i][16], animalData[i][17]);
+		animalData[i][14], animalData[i][15], animalData[i][16], animalData[i][17], animalData[i][18]);
 	animalObjects.push(newAnimal);
 };
 
