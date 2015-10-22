@@ -39,6 +39,9 @@ var animalData = [ //All animal data is expandable, add new lines to the 2 dimen
 
 var animalObjects = []; //Holds all animal information for scoring
 
+var backgroundImgs = ['img/restaurant.jpg','img/trash.jpg','img/gorge.jpg','img/wedding.jpg','img/ticket.jpg',
+						'img/clothing.png','img/sink.jpg','img/dinner.jpg','img/rex.jpg','img/honeymoon.jpg']
+
 for(var i=0; i<animalData.length; i+=1){ //Pushes all animal data
 	var newAnimal = new Animal(animalData[i][0], animalData[i][1], animalData[i][2], animalData[i][3],
 		animalData[i][4], animalData[i][5], animalData[i][6], animalData[i][7], animalData[i][8],
@@ -140,9 +143,13 @@ function setAttribute(el, attrs) { //Function to push attributes into HTML eleme
 }
 
 var questionBuilder = function () { //builds HTML framework for question block
-	var form = document.getElementById('form');
+
+	var backgroundImg = document.getElementById('questionImg');
+	setAttribute(backgroundImg, {'background':backgroundImgs[questionNumber]});
+
+	var form = document.getElementById('form');    
 	var question = document.createElement('div');
-	setAttribute(question, {'id':'question'});  //Question
+	setAttribute(question, {'id':'question', 'background-attachment':'fixed', 'background-position':'center', 'background-repeat':'no-repeat', 'background-size':'cover'});  //Question
 	form.appendChild(question);
 	qTextEl = document.createElement('p');
 	qTextEl.innerHTML = questions[questionNumber];
