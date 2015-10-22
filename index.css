@@ -1,24 +1,15 @@
 header {
-	background-color: red;
-}
-footer {
-	background-color: pink;
-/*	clear: both;
-	position: relative;
-	z-index: 10;
-	height: 3em;
-	margin: -3em;
-	text-align: center;*/
-}
-#index-p {
-	background-color: purple;
-}
-button {
-	background-color: orange;
-}
-#index-form {
-	background-color: blue;
-}
-body {
-	background-color: grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 200px;
+    margin-top: 3%;
+    margin-left: 8%;
+    margin-right: 8%;
+    background-color:  #c1a8ad;
+    box-shadow: 0px 0px 15px rgba(49,7,7,1);
+    border-radius: 5px;
+    text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
