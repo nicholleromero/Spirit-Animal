@@ -1,9 +1,61 @@
-#animal-img {
-	margin-left: 150px;
+#textMsg{
+  text-align: center;
+  color:;
 }
-#textMsg {
-	/*background-color: blue;*/
+#animal-content{
+  text-align: center;
+  background-color:#9da9b9;
+  border:2px solid black;
+  margin-left: 250px;
+  margin-right: 250px;
+  border-radius: 5px;
 }
-#animal-content {
-	/*background-color: green;*/
+#play-again{
+  background-color: white;
+
+}
+#button-wrapper{
+  text-align: center
+}
+*{
+  font-family: Merriweather;
+  background-color:#c6cdd1;
+  color: black;
+}
+/*body{
+  background-image:url("img/space.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%
+}*/
+#animalpic{
+  border: 2px solid black;
+  height: 300px;
+}
+/*header*/
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100px;
+/*  margin-top: 3%;*/
+  width: 100%;
+  background-color:  #c1a8ad;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.header-h1{
+  background-color: #c1a8ad;
+  text-align: center;
+}
+#index-nav{
+  background-color: #c1a8ad;
+  text-align: center;
+  padding-bottom: 10px;
+}
+#header-link{
+  background-color: #c1a8ad;
+  padding-left: 10px;
+  padding-right: 10px;
 }
