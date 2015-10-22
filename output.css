@@ -10,9 +10,20 @@
   margin-right: 250px;
   border-radius: 5px;
 }
-#play-again{
+/*#play-again{
   background-color: white;
 
+}*/
+button {
+  align-self: center;
+  text-align: center;
+  background-color: #c6cdd1;
+  font-size: 180%;
+  height: 130px;
+  width: 130px;
+  border-radius: 50%;
+/*    border: 5px solid #4d6486;*/
+  box-shadow: 0px 0px 20px rgba(49,7,7,1);
 }
 #button-wrapper{
   text-align: center
