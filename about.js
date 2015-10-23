@@ -1,5 +1,5 @@
 Image9 = new Image(600,400)
-Image9.src = "img/tech-titans.jpeg"
+Image9.src = "img/team.jpg"
 Image10 = new Image(600,400)
 Image10.src = "img/the_sandlot.jpg"
 

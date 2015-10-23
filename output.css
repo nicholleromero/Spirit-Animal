@@ -51,7 +51,8 @@ header {
 /*  margin-top: 3%;*/
   width: 100%;
   background-color:  #c1a8ad;
-
+box-shadow: 0px 0px 15px rgba(49,7,7,1);
+  border-radius: 5px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;

@@ -84,7 +84,7 @@ var a2Text = ['<label for="A2">You look up their name and address in Google in h
 				'<label for="A2">Relaxing on the beach and sightseeing. Sun and sand is your vacation m.o.',
 				'<label for="A2">White river rafting in the Columbia River.',
 				'<label for="A2">Check the back area and out front to make sure the salesperson is not in any trouble. Then you alert the business next door that the clothing store has been left unattended.',
-				'<label for="A2">Google a quick solution while you call the landlord. This should be there problem to fix, but you do not want it to get worse +1 resourceful.',
+				'<label for="A2">Google a quick solution while you call the landlord. This should be their problem to fix, but you do not want it to get worse +1 resourceful.',
 				'<label for="A2">Send a raincheck and head to the nearest sports bar; intimate dinners where you know everyone are boring to you.',
 				'<label for="A2">A school of acrobatics and trapeze arts. Teambuilding and hangtime',
 				'<label for="A2">Backpacking through indigenous ruins in Mexico.'];
