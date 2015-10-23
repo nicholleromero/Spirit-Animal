@@ -42,6 +42,11 @@ var animalObjects = []; //Holds all animal information for scoring
 var backgroundImgs = ['img/restaurant.jpg','img/trash.jpg','img/gorge.jpg','img/wedding.jpg','img/ticket.jpg',
 						'img/clothing.png','img/sink.jpg','img/dinner.jpg','img/rex.jpg','img/honeymoon.jpg']
 
+var questionTitles = ['The restaurant...', 'Trash crash!', 'Do you believe in Rock and Roll?', 'Aloha!', 'Two tickets to paradise..',
+						'Make it work.', 'Drip drop drip', 'The dinner party', 'Drop and give me twenty', 'Honeymooners']
+
+var inputButtons = ['$$??', '@#$!!!', 'Rock out?', 'Aloha', 'Come fly with me', 'No shirt ?', 'Fix it!', 'Yum', 'Push it real good', 'To the moon Alice!']
+
 for(var i=0; i<animalData.length; i+=1){ //Pushes all animal data
 	var newAnimal = new Animal(animalData[i][0], animalData[i][1], animalData[i][2], animalData[i][3],
 		animalData[i][4], animalData[i][5], animalData[i][6], animalData[i][7], animalData[i][8],
@@ -93,47 +98,48 @@ var a3Text = ['<label for="A3">Immediately give the wallet to the restaurant man
 				'<label for="A3">Confirm your RSVP and let them know what dish you are bringing.',
 				'<label for="A2">Kayaking in the Puget Sound. There is nothing better!',
 				'<label for="A3">A five-star resort trip to the Swiss Alps.'];
-var Answer = function (id, type, attr) { //Adds attributes to answer elements
+var Answer = function (id, name, type, attr) { //Adds attributes to answer elements
 	this.id = id;
+	this.name = name;
 	this.type = type;
 	this.attr = attr
 }
 //ATTRIBUTES_________________________________________________________________
 var a1Attr = [ //Answer 1 attributes
-	new Answer ('A1', 'radio', 'noble'),
-	new Answer ('A1', 'radio', 'strong'),
-	new Answer ('A1', 'radio', 'smallgroup'),
-	new Answer ('A1', 'radio', 'water'),
-	new Answer ('A1', 'radio', 'arctic'),
-	new Answer ('A1', 'radio', 'noble'),
-	new Answer ('A1', 'radio', 'wise'),
-	new Answer ('A1', 'radio', 'loner'),
-	new Answer ('A1', 'radio', 'land'),
-	new Answer ('A1', 'radio', 'river')]
+	new Answer ('A1', 'button', 'radio', 'noble'),
+	new Answer ('A1', 'button', 'radio', 'strong'),
+	new Answer ('A1', 'button', 'radio', 'smallgroup'),
+	new Answer ('A1', 'button', 'radio', 'water'),
+	new Answer ('A1', 'button', 'radio', 'arctic'),
+	new Answer ('A1', 'button', 'radio', 'noble'),
+	new Answer ('A1', 'button', 'radio', 'wise'),
+	new Answer ('A1', 'button', 'radio', 'loner'),
+	new Answer ('A1', 'button', 'radio', 'land'),
+	new Answer ('A1', 'button', 'radio', 'river')]
 
 var a2Attr = [ //Answer 2 attributes
-	new Answer ('A2', 'radio', 'resourceful'),
-	new Answer ('A2', 'radio', 'cunning'),
-	new Answer ('A2', 'radio', 'loner'),
-	new Answer ('A2', 'radio', 'land'),
-	new Answer ('A2', 'radio', 'river'),
-	new Answer ('A2', 'radio', 'loyal'),
-	new Answer ('A2', 'radio', 'resourceful'),
-	new Answer ('A2', 'radio', 'largegroup'),
-	new Answer ('A2', 'radio', 'air'),
-	new Answer ('A2', 'radio', 'forest')]
+	new Answer ('A2', 'button', 'radio', 'resourceful'),
+	new Answer ('A2', 'button', 'radio', 'cunning'),
+	new Answer ('A2', 'button', 'radio', 'loner'),
+	new Answer ('A2', 'button', 'radio', 'land'),
+	new Answer ('A2', 'button', 'radio', 'river'),
+	new Answer ('A2', 'button', 'radio', 'loyal'),
+	new Answer ('A2', 'button', 'radio', 'resourceful'),
+	new Answer ('A2', 'button', 'radio', 'largegroup'),
+	new Answer ('A2', 'button', 'radio', 'air'),
+	new Answer ('A2', 'button', 'radio', 'forest')]
 
 var a3Attr = [ //Answer 3 attributes
-	new Answer ('A3', 'radio', 'loyal'),
-	new Answer ('A3', 'radio', 'wise'),
-	new Answer ('A3', 'radio', 'largegroup'),
-	new Answer ('A3', 'radio', 'air'),
-	new Answer ('A3', 'radio', 'forest'),
-	new Answer ('A3', 'radio', 'cunning'),
-	new Answer ('A3', 'radio', 'strong'),
-	new Answer ('A3', 'radio', 'smallgroup'),
-	new Answer ('A3', 'radio', 'water'),
-	new Answer ('A3', 'radio', 'arctic')]
+	new Answer ('A3', 'button', 'radio', 'loyal'),
+	new Answer ('A3', 'button', 'radio', 'wise'),
+	new Answer ('A3', 'button', 'radio', 'largegroup'),
+	new Answer ('A3', 'button', 'radio', 'air'),
+	new Answer ('A3', 'button', 'radio', 'forest'),
+	new Answer ('A3', 'button', 'radio', 'cunning'),
+	new Answer ('A3', 'button', 'radio', 'strong'),
+	new Answer ('A3', 'button', 'radio', 'smallgroup'),
+	new Answer ('A3', 'button', 'radio', 'water'),
+	new Answer ('A3', 'button', 'radio', 'arctic')]
 //___________________________________________________________________________
 
 function setAttribute(el, attrs) { //Function to push attributes into HTML elements
@@ -146,6 +152,9 @@ var questionBuilder = function () { //builds HTML framework for question block
 
 	var backgroundImg = document.getElementById('questionImg');
 	setAttribute(backgroundImg, {'background':backgroundImgs[questionNumber]});
+
+	var questionTitle = document.getElementById('questionTitle');
+	questionTitle.innerHTML = questionTitles[questionNumber];
 
 	var form = document.getElementById('form');    
 	var question = document.createElement('div');
@@ -181,7 +190,7 @@ var questionBuilder = function () { //builds HTML framework for question block
 
 	var inputButton = document.createElement('button');  //Submit button
 	setAttribute(inputButton, {'type':'click', 'value':'submit', 'id':'inputButton'});
-	inputButton.textContent='Submit';
+	inputButton.textContent=inputButtons[questionNumber];
 	question.appendChild(inputButton);
 	inputButton.addEventListener('click', valueScore);
 };
