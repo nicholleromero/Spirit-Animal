@@ -25,6 +25,11 @@ button {
 /*    border: 5px solid #4d6486;*/
   box-shadow: 0px 0px 20px rgba(49,7,7,1);
 }
+button:hover {
+  background-color: #4d6486;
+  border: 5px solid #c6cdd1;
+  color: #c6cdd1;
+}
 #button-wrapper{
   text-align: center
 }
@@ -70,4 +75,9 @@ box-shadow: 0px 0px 15px rgba(49,7,7,1);
   background-color: #c1a8ad;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+a {
+  align-self: center;
+  font-size: 200%;
 }
