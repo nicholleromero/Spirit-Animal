@@ -1,5 +1,6 @@
-.container {
-
+* {
+	background-color: #c6cdd1;
+	font-family: Merriweather;
 }
 
 header {
@@ -17,9 +18,17 @@ header {
  	overflow: hidden;
 }
 
+#headerImage img {
+	border-radius: 5px;
+}
+
+#bioImage {
+	border-radius: : 5px;
+}
 .header-h1{
  padding-top: 15px;
- background-color: #c1a8ad ;
+ background-color: #c1a8ad;
+ font-weight: bold:;
  text-align: center;
 }
 #index-nav{
@@ -31,77 +40,10 @@ header {
  padding-left: 10px;
  padding-right: 10px;
 }
-.div .four{
-	vertical-align: right;
-}
-.div .eight {
-	vertical-align: center;
-}
-.teamname {
-	text-align: left;
-}
-#logo {
-	padding-top: 40px;
-}
-
-#imageflip9 {
-	margin-bottom: 20px;
-}
-.title {
-	margin-top: 60px;
-	text-align: left;
-}
-#border {
-	color: #c1a8ad
-}
-.columns {
-	width: 100%;
-}
-
-* {
-	background-color: #c6cdd1;
-	font-family: Merriweather;
-}
-
-bio .one-half {
-	border-color: black;
-}
-p {
-	margin-right: 5px;
-}
-
-.bio1 {
-	vertical-align: left;
-	text-align: left;
-}
-.bio2 {
-	vertical-align: left;
-	text-align: left;
-}
-
-p {
-	border-color: #83515a;
-	border-radius: 5px;
-	width: 320px;
-    padding: 0px 12px 4px 0px;
-    overflow: auto;
-}
-p.three {
-	width: 320px;
-    padding: 0px 12px 4px 0px;
-    overflow:auto;
-}
-
-#footer {
-	clear: both;
-	position: relative;
-	z-index: 10;
-	height: 3em;
-	margin: -3em;
-	text-align: center;
-}
-
 .gh {
 	color: #83515a;
+	font-weight: bold;
+}
+#teamName  {
 	font-weight: bold;
 }
