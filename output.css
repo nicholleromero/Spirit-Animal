@@ -9,6 +9,7 @@
   margin-left: 250px;
   margin-right: 250px;
   border-radius: 5px;
+  font-size: 20px;
 }
 /*#play-again{
   background-color: white;
@@ -65,11 +66,13 @@ box-shadow: 0px 0px 15px rgba(49,7,7,1);
 .header-h1{
   background-color: #c1a8ad;
   text-align: center;
+  padding-top:10px;
 }
 #index-nav{
   background-color: #c1a8ad;
   text-align: center;
-  padding-bottom: 10px;
+  padding-bottom: 30px;
+  font-size:17px;
 }
 #header-link{
   background-color: #c1a8ad;
@@ -77,7 +80,10 @@ box-shadow: 0px 0px 15px rgba(49,7,7,1);
   padding-right: 10px;
 }
 
-a {
-  align-self: center;
-  font-size: 200%;
+#beats-link{
+  text-align: center;
+}
+#beats-holder{
+  text-align: center;
+  padding-top: 10px;
 }
