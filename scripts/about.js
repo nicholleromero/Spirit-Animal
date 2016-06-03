@@ -3,15 +3,25 @@ Image9.src = "img/team.jpg"
 Image10 = new Image(600,400)
 Image10.src = "img/the_sandlot.jpg"
 
-function SwapOutTeam() {
-	document.imageflip9.src = Image10.src;
-	return true;
-}
 
-function SwapBackTeam() {
-	document.imageflip9.src = Image9.src;
-	return true;
-}
+
+$('#imageflip9').mouseover( function(){
+		$('#imageflip9').attr('src', Image10.src);
+});
+
+$('#imageflip9').mouseleave( function(){
+		$('#imageflip9').attr('src', Image9.src);
+});
+
+// function SwapOutTeam() {
+// 	document.imageflip9.src = Image10.src;
+// 	return true;
+// }
+//
+// function SwapBackTeam() {
+// 	document.imageflip9.src = Image9.src;
+// 	return true;
+// }
 
 Image1 = new Image(200,222)
 Image1.src = "img/swaintek.jpg"

@@ -19,11 +19,15 @@ var initialClick = function(e) {
 	}
 //Function Change the Name Label to a "String" Message preparing the user for the test.
 	var loadQuestions = function() {
-	  var label = document.getElementById('labelTag');
+	  // var label = document.getElementById('labelTag');
 	  var msg = "Hello, " + username + "!" + '<br />' + " Are You Ready To Find Your Your Spirit Animal?";
-	  label.innerHTML = msg;
-	  var submitButton = document.getElementById('submitButton');
-	  submitButton.textContent = "I'M READY!";
+	  // label.innerHTML = msg;
+
+		$('#labelTag').html(msg);
+		$('#submitButton').text("I'M READY!");
+
+	  // var submitButton = document.getElementById('submitButton');
+	  // submitButton.textContent = "I'M READY!";
 	}
 	userInput();
 	loadQuestions();
