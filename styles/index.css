@@ -120,3 +120,19 @@ button:hover {
 footer {
 	background-color: pink;
 }
+
+p, form{
+	max-width: 92.5%;
+}
+
+
+/*-------Responsive design------ */
+
+
+@media only screen and (max-width: 500px) {
+
+
+  header a {
+    display: block;
+
+  }
