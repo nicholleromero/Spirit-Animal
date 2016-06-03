@@ -4,11 +4,14 @@ var username = "";
 var initialClick = function(e) {
 	e.preventDefault();
 	var userInput = function() {
-		username = document.getElementById('username').value;
-		var label = document.getElementById('labelTag');
-		var nameCorrect = "YOU MUST ENTER A NAME";
+		username = $('#username').val();
+
+		// document.getElementById('username').value;
+		// var label = document.getElementById('labelTag');
+		// var nameCorrect = "YOU MUST ENTER A NAME";
 		if(username.length === 0) {
-			label.innerHTML = nameCorrect;
+			$('#labelTag').html("YOU MUST ENTER A NAME");
+			// label.innerHTML = nameCorrect;
 			userInput();
 		}
 		localStorage.setItem('username', username);
@@ -25,6 +28,8 @@ var initialClick = function(e) {
 	userInput();
 	loadQuestions();
 //Listener to listen for the enter or return button to be pressed.
+
+
 		window.addEventListener('keypress', function(e) {
 			if (e.keyCode == 13) startGame('keypress');
 		});
@@ -36,10 +41,9 @@ var startGame = function (e) {
   window.location.href = "questions.html";
 }
 //Runs our event listener.
-var submitButton = document.getElementById('submitButton');
-submitButton.addEventListener(('click' || keyCode == 13), initialClick);
+
+$('#submitButton').on(('click' || keyCode == 13), initialClick);
 
 
-
-
-
+// var submitButton = document.getElementById('submitButton');
+// submitButton.addEventListener(('click' || keyCode == 13), initialClick);
